@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AUT Polar H10 Companion</string>
+    <string name="user_data_name">User Data</string>
+    <string name="hrv_name">HRV Graph</string>
+    <string name="connect">SHOW DATA</string>
+    <string name="connect2">CONNECT RR</string>
+    <string name="connecting">Connecting to device</string>
+    <string name="connected">Connected!</string>
+    <string name="set_id_button">Change device ID</string>
+    <string name="hr_and_rr">LOADING DATA… <br /></string>
+    <string name="timer_data">Timer: ></string>
+</resources>

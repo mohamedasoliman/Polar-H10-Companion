@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#650077">
+
+    <TextView
+        android:id="@+id/fw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/hrRr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309" />
+
+    <TextView
+        android:id="@+id/hrRr"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/hr_and_rr"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fw" />
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/plot"
+        style="@style/FullScreenGraph"
+        android:layout_width="410dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="345dp"
+        app:backgroundColor="#9C27B0"
+        app:graphBackgroundColor="@color/colorAccent"
+        app:graphMarginBottom="12dp"
+        app:graphMarginTop="12dp"
+        app:gridBackgroundColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:lineLabelInsetLeft="12dp"
+        app:lineLabels="left"
+        app:renderMode="use_background_thread"
+        app:title="" />
+
+    <Button
+        android:id="@+id/startTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:onClick="startTimer"
+        android:text="Start Timer"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/plot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/saveData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:onClick="saveDataToExcel"
+        android:text="Save Data"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/plot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/timerTwo"
+        android:layout_width="200dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="28dp"
+        android:text="Timer: 179s"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/startTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/wattEnter"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="152dp"
+        android:background="@drawable/edittextstyle"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rpmEnter" />
+
+    <TextView
+        android:id="@+id/rpm"
+        android:layout_width="53dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:text="RPM:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/watt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="104dp"
+        android:text="WATT:"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/rpmEnter"
+        android:layout_width="136dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="152dp"
+        android:background="@drawable/edittextstyle"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="122dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginBottom="280dp"
+        app:layout_constraintBottom_toTopOf="@+id/plot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/_aut" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:onClick="showExertionDialog"
+        android:text="Exertion"
+        app:layout_constraintBottom_toTopOf="@+id/plot"
+        app:layout_constraintEnd_toStartOf="@+id/startTimer"
+        app:layout_constraintHorizontal_bias="0.383"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939" />
+
+    <Button
+        android:id="@+id/showHrvGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:background="@android:drawable/button_onoff_indicator_off"
+        android:onClick="onClickShowGraph"
+        android:text="HRV Graph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
